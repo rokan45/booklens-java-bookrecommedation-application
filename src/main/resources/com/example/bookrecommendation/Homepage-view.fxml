@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="720.0" prefWidth="1280.0" styleClass="root" stylesheets="@./style.css"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.bookrecommendation.HomePageController">
+    <top>
+        <HBox fx:id="header" alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0" spacing="20.0"
+              styleClass="header" BorderPane.alignment="CENTER">
+            <children>
+                <!-- Changed "BookRecommender" to "BookLens" and applied a custom class -->
+                <Label styleClass="app-logo-text" text="BookLens">
+                    <font>
+                        <Font name="Arial Bold" size="24.0"/>
+                    </font>
+                </Label>
+                <HBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                    <children>
+                        <TextField fx:id="searchBar" prefWidth="400.0" promptText="Search by title or author..."
+                                   styleClass="search-bar-field"/>
+                        <!-- Added button styleClass -->
+                        <Button fx:id="searchButton" mnemonicParsing="false" styleClass="search-button" text="Search"/>
+                    </children>
+                </HBox>
+                <!-- Applied 'header-nav-button' for a distinct look -->
+                <Button fx:id="bookshelfButton" mnemonicParsing="false" styleClass="header-nav-button"
+                        text="My Bookshelf"/>
+                <Button fx:id="profileButton" alignment="CENTER" mnemonicParsing="false" styleClass="header-nav-button"
+                        text="Profile"/>
+            </children>
+            <padding>
+                <Insets left="30.0" right="30.0"/>
+            </padding>
+        </HBox>
+    </top>
+    <left>
+        <VBox fx:id="filterPanel" prefWidth="220.0" spacing="15.0" styleClass="filter-panel"
+              BorderPane.alignment="CENTER">
+            <children>
+                <Label styleClass="filter-title" text="Discover Books">
+                    <font>
+                        <Font name="System Bold" size="20.0"/>
+                    </font>
+                </Label>
+                <Label styleClass="filter-label" text="Genre"/>
+                <ComboBox fx:id="genreFilter" prefWidth="180.0" promptText="All Genres" styleClass="filter-combobox"/>
+                <Label styleClass="filter-label" text="Author"/>
+                <ComboBox fx:id="authorFilter" prefWidth="180.0" promptText="All Authors" styleClass="filter-combobox"/>
+                <Label styleClass="filter-label" text="Language"/>
+                <ComboBox fx:id="languageFilter" prefWidth="180.0" promptText="All Languages"
+                          styleClass="filter-combobox"/>
+                <!-- Applied 'filter-action-button' for a consistent look -->
+                <Button fx:id="applyFiltersButton" mnemonicParsing="false" prefWidth="180.0"
+                        styleClass="filter-action-button" text="Apply Filters"/>
+                <Button fx:id="resetFiltersButton" mnemonicParsing="false" prefWidth="180.0"
+                        styleClass="filter-action-button reset-button" text="Reset"/>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
+        </VBox>
+    </left>
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="scroll-pane" BorderPane.alignment="CENTER">
+            <content>
+                <VBox spacing="30.0" styleClass="center-content">
+                    <children>
+                        <!--                        Recommended Book section-->
+                        <VBox spacing="10.0">
+                            <children>
+                                <Label styleClass="section-title" text="Recommended For You"/>
+                                <ScrollPane hbarPolicy="ALWAYS" vbarPolicy="NEVER">
+                                    <content>
+                                        <HBox fx:id="recommendedBooksContainer" spacing="15.0"/>
+                                    </content>
+                                </ScrollPane>
+                            </children>
+                        </VBox>
+                        <!--                        Top-rated book section-->
+                        <VBox spacing="10.0">
+                            <children>
+                                <Label styleClass="section-title" text="Top Rated Books"/>
+                                <ScrollPane hbarPolicy="ALWAYS" vbarPolicy="NEVER">
+                                    <content>
+                                        <HBox fx:id="topRatedBooksContainer" spacing="15.0"/>
+                                    </content>
+                                </ScrollPane>
+                            </children>
+                        </VBox>
+                        <VBox spacing="10.0">
+                            <children>
+                                <Label styleClass="section-title" text="Full Catalog"/>
+                                <ScrollPane fitToWidth="true" styleClass="catalog-scroll-pane">
+                                    <content>
+
+                                        <TilePane fx:id="bookCatalogTilePane" hgap="20" prefColumns="3" vgap="20">
+                                            <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                                            </padding>
+                                        </TilePane>
+                                    </content>
+                                </ScrollPane>
+                            </children>
+                        </VBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

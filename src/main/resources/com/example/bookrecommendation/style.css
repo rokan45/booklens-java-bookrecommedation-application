@@ -1,0 +1,255 @@
+/* --- Root & General Styling --- */
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-background-color: linear-gradient(to bottom right, #FDF9F2, #FAE7CA); /* Soft warm gradient */
+    -fx-text-fill: #333333; /* Dark grey for general text */
+}
+
+/* --- App Title/Logo Text --- */
+.app-logo-text {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e; /* A strong, professional dark blue/grey */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.0, 0, 1); /* Subtle shadow for depth */
+}
+
+/* --- Form Containers (Login, Signup) --- */
+.form-container {
+    -fx-background-color: white; /* Keep forms crisp white */
+    -fx-background-radius: 15px;
+    -fx-padding: 40px;
+    -fx-spacing: 20px;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 20, 0.5, 0, 8); /* Soft shadow */
+    -fx-border-color: #dcdfe6;
+    -fx-border-width: 1px;
+    -fx-border-radius: 15px;
+}
+
+.form-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 0 0 10px 0;
+}
+
+/* --- Labels for Input Fields --- */
+.input-label, .filter-label { /* Unified label style */
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4a6572;
+}
+
+/* --- Text Fields, Password Fields & ComboBoxes --- */
+.text-field, .password-field, .filter-combobox { /* Unified field style */
+    -fx-pref-height: 38px;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-border-color: #dcdfe6;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-padding: 8px 12px;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #999999;
+}
+.text-field:focused, .password-field:focused, .filter-combobox:focused {
+    -fx-border-color: #007bff;
+    -fx-effect: dropshadow(gaussian, rgba(0,123,255,0.2), 5, 0.0, 0, 0);
+}
+.error-field {
+    -fx-border-color: #dc3545;
+    -fx-border-width: 2px;
+}
+
+/* --- Primary Buttons (General) --- */
+.button { /* Base button style, specific buttons will override */
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,123,255,0.2), 10, 0.0, 0, 0);
+}
+.button:hover {
+    -fx-background-color: #0056b3;
+    -fx-effect: dropshadow(gaussian, rgba(0,123,255,0.4), 12, 0.0, 0, 0);
+}
+
+/* --- Hyperlinks --- */
+.hyperlink {
+    -fx-text-fill: #007bff;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-underline: true;
+}
+.hyperlink:hover {
+    -fx-text-fill: #0056b3;
+}
+
+/* --- Message Labels (for errors/success) --- */
+.message-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #dc3545;
+    -fx-padding: 5px 0 0 0;
+}
+.message-label.success {
+    -fx-text-fill: #28a745;
+}
+
+/* --- HOMEPAGE SPECIFIC --- */
+.header {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0.5, 0, 2);
+}
+
+/* --- Header Search Bar & Button --- */
+.search-bar-field { /* Specific style for search TextField */
+    -fx-font-size: 14px;
+    -fx-background-radius: 8px 0 0 8px;
+    -fx-border-color: #dcdfe6;
+    -fx-border-radius: 8px 0 0 8px;
+    -fx-border-width: 1 0 1 1;
+    -fx-prompt-text-fill: #999999;
+    -fx-pref-height: 38px; /* Match other fields */
+}
+.search-button { /* Specific style for Search button */
+    -fx-background-radius: 0 8px 8px 0;
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: #007bff;
+    -fx-border-radius: 0 8px 8px 0;
+    -fx-border-width: 1;
+    -fx-cursor: hand;
+    -fx-padding: 6 15 6 15;
+    -fx-pref-height: 38px; /* Match search field height */
+    -fx-effect: none; /* Remove duplicate shadow from .button base style */
+}
+.search-button:hover {
+    -fx-background-color: #0056b3;
+}
+
+/* --- Header Navigation Buttons (My Bookshelf, Profile) --- */
+.header-nav-button {
+    -fx-background-color: #007bff; /* Primary blue */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-padding: 8px 15px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,123,255,0.2), 5, 0.0, 0, 0);
+}
+.header-nav-button:hover {
+    -fx-background-color: #0056b3;
+    -fx-effect: dropshadow(gaussian, rgba(0,123,255,0.4), 8, 0.0, 0, 0);
+}
+
+
+/* --- FILTER PANEL (LEFT) --- */
+.filter-panel {
+    -fx-background-color: #FAE7CA; /* Your custom color here */
+    -fx-border-color: transparent #e0e0e0 transparent transparent;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0.5, 0, 2);
+}
+
+.filter-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #343a40;
+}
+
+/* --- Filter Action Buttons (Apply, Reset) --- */
+.filter-action-button {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-pref-height: 38px; /* Consistent height */
+    -fx-font-size: 14px; /* Consistent font size */
+    -fx-effect: dropshadow(gaussian, rgba(0,123,255,0.2), 5, 0.0, 0, 0);
+}
+.filter-action-button:hover {
+    -fx-background-color: #0056b3;
+}
+.reset-button { /* Specific style for Reset button */
+    -fx-background-color: #6c757d; /* Grey for reset */
+    -fx-effect: dropshadow(gaussian, rgba(108,117,125,0.2), 5, 0.0, 0, 0);
+}
+.reset-button:hover {
+    -fx-background-color: #5a6268;
+}
+
+
+/* --- CENTER CONTENT & BOOK CARD STYLING --- */
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #495057;
+}
+
+.scroll-pane { -fx-background-color: transparent; }
+.scroll-pane > .viewport { -fx-background-color: transparent; }
+
+.book-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.2, 0, 4);
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-min-width: 140px;
+    -fx-max-width: 150px;
+}
+.book-card:hover {
+    -fx-border-color: #007bff;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 15, 0.5, 0, 6);
+}
+
+.book-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #212529;
+    -fx-max-width: 130px;
+}
+.book-author {
+    -fx-font-size: 11px;
+    -fx-text-fill: #6c757d;
+    -fx-max-width: 130px;
+}
+
+/* --- Bookshelf TabPane Headers (Ensure custom color is applied) --- */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #f0f4f8; /* Soft background for tabs */
+}
+.tab-pane .tab {
+    -fx-background-color: #E9ECEF; /* Default tab background */
+    -fx-background-radius: 5px 5px 0 0;
+    -fx-padding: 8px 15px;
+}
+.tab-pane .tab:selected {
+    -fx-background-color: #FAE7CA; /* Highlight selected tab with custom color */
+    -fx-font-weight: bold;
+}
+.tab-pane .tab:hover {
+    -fx-background-color: #dcdfe6;
+}
+.tab-pane .tab-label {
+    -fx-text-fill: #333333;
+}
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #2c3e50;
+}
+
+/* --- Book Details Popup Styles (for consistency) --- */
+.book-details-popup {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 15, 0, 0, 5);
+}
